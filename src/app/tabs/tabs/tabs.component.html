@@ -1,0 +1,11 @@
+<div class="tabs__titles">
+  <div
+    *ngFor="let tab of tabs; let i = index;"
+    class="tabs__title"
+    [class.tabs__title--active]="i === activeTabIndex"
+    (click)="setActiveTab(i)"
+  >
+    <ng-container *ngTemplateOutlet="tab.tabTitle.title"></ng-container>
+  </div>
+</div>
+<ng-container *ngTemplateOutlet="activeTabContent()"></ng-container>
